@@ -46,6 +46,9 @@ print("Median Color:", median_color)
 print("Variance:", variance)
 print("Probability of choosing red:", red_probability)
 
+# Retrieve the host value from the DATABASE_URL environment variable
+database_url = os.environ.get('DATABASE_URL')
+host = database_url.split('@')[1].split(':')[0]
 
 # Connect to the PostgreSQL database
 conn = psycopg2.connect(
